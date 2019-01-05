@@ -14,31 +14,25 @@ MainWindow::~MainWindow()
 }
 
 
-#include <QFile>
-#include <QString>
-#include <QMessageBox>
-#include <QTextStream>
-#include <QFileDialog>
-#include <QSerialPort>
-#include <QPalette>
-
-static QString SSID_data;
-static QString password_data;
-static QString static_IP_data;
-static QString gateway_data;
-static QString subnet_data;
-static QString port_data;
-static QSerialPort serial_port;
-
-static QString makeString()
+QString MainWindow::makeString()
 {
-    QString temp_str = QString("{\n") + "\tSSID_data" + ":" + SSID_data + ",\n"
-                        + "\tpassword_data" + ":" + password_data + ",\n"
-                        + "\tstatic_IP_data" + ":" + static_IP_data + ",\n"
-                        + "\tgateway_data" + ":" + gateway_data + ",\n"
-                        + "\tsubnet_data" + ":" + subnet_data + ",\n"
-                        + "\tport_data" + ":" + port_data + "\n}";
+    QString temp_str = QString("{") + "\"SSID_data\"" + ":" + "\"" + SSID_data + "\"" + ","
+                        + "\"password_data\"" + ":" + "\"" +password_data + "\"" + ","
+                        + "\"static_IP_data\"" + ":" + "\"" + static_IP_data + "\"" + ","
+                        + "\"gateway_data\"" + ":" + "\"" + gateway_data + "\"" + ","
+                        + "\"subnet_data\"" + ":" + "\"" + subnet_data + "\"" + ","
+                        + "\"port_data\"" + ":" +  port_data + "}";
     return temp_str;
+}
+
+void MainWindow::readFromSerial()
+{
+    if(serial_port.bytesAvailable())
+    {
+       ui->serial_content_plainTextEdit->setPlainText(ui->serial_content_plainTextEdit->toPlainText() + serial_port.readAll());
+       ui->serial_content_plainTextEdit->verticalScrollBar()->setValue(ui->serial_content_plainTextEdit->verticalScrollBar()->maximum());
+    }
+    QTimer::singleShot(1, this, SLOT(readFromSerial()));
 }
 
 
@@ -150,6 +144,8 @@ void MainWindow::on_COM_open_pushButton_released()
     {
         ui->COM_selecte_lineEdit->setStyleSheet("QLineEdit { background: rgb(33, 150, 243);}");
     }
+
+    QTimer::singleShot(1, this, SLOT(readFromSerial()));
 }
 
 void MainWindow::on_COM_close_pushButton_released()

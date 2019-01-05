@@ -2,6 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QString>
+#include <QMessageBox>
+#include <QTextStream>
+#include <QFileDialog>
+#include <QSerialPort>
+#include <QPalette>
+#include <QTimer>
+#include <QScrollBar>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +23,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+public:
+    QString makeString();
+
+public slots:
+    void readFromSerial();
 
 private slots:
     void on_load_file_content_pushButton_released();
@@ -52,6 +67,14 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    QString SSID_data;
+    QString password_data;
+    QString static_IP_data;
+    QString gateway_data;
+    QString subnet_data;
+    QString port_data;
+    QSerialPort serial_port;
 };
 
 #endif // MAINWINDOW_H

@@ -588,6 +588,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="SSID_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -614,6 +617,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="password_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -637,6 +643,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="static_IP_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -1205,6 +1214,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="gateway_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -1228,6 +1240,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="subnet_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -1251,6 +1266,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </property>
     </widget>
     <widget class="QPushButton" name="port_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -1270,7 +1288,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       <x>390</x>
       <y>120</y>
       <width>311</width>
-      <height>261</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="title">
@@ -1318,7 +1336,17 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <x>10</x>
        <y>90</y>
        <width>291</width>
-       <height>151</height>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="serial_content_plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>291</width>
+       <height>111</height>
       </rect>
      </property>
     </widget>
@@ -1326,9 +1354,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>10</x>
       <y>390</y>
-      <width>311</width>
+      <width>351</width>
       <height>81</height>
      </rect>
     </property>
@@ -1351,9 +1379,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="QPushButton" name="COM_open_pushButton">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>210</x>
        <y>20</y>
-       <width>41</width>
+       <width>51</width>
        <height>23</height>
       </rect>
      </property>
@@ -1364,9 +1392,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="QPushButton" name="COM_close_pushButton">
      <property name="geometry">
       <rect>
-       <x>254</x>
+       <x>290</x>
        <y>20</y>
-       <width>41</width>
+       <width>51</width>
        <height>23</height>
       </rect>
      </property>
@@ -1377,9 +1405,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="QPushButton" name="submit_pushButton">
      <property name="geometry">
       <rect>
-       <x>254</x>
+       <x>290</x>
        <y>50</y>
-       <width>41</width>
+       <width>51</width>
        <height>23</height>
       </rect>
      </property>
@@ -1387,7 +1415,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       <string>Send</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="COM_baudrate_lineEdit">
      <property name="enabled">
       <bool>false</bool>
      </property>
