@@ -142,7 +142,7 @@ void MainWindow::on_COM_open_pushButton_released()
     }
     else
     {
-        ui->COM_selecte_lineEdit->setStyleSheet("QLineEdit { background: rgb(33, 150, 243);}");
+        ui->COM_status_label->setText("Connecting !!!");
     }
 
     QTimer::singleShot(1, this, SLOT(readFromSerial()));
@@ -151,47 +151,5 @@ void MainWindow::on_COM_open_pushButton_released()
 void MainWindow::on_COM_close_pushButton_released()
 {
     serial_port.close();
-    ui->COM_selecte_lineEdit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(0, 99, 233); }");
-}
-
-void MainWindow::on_SSID_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "SSID_data" + ":" + SSID_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
-}
-
-void MainWindow::on_password_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "password_data" + ":" + password_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
-}
-
-void MainWindow::on_static_IP_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "static_IP_data" + ":" + static_IP_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
-}
-
-void MainWindow::on_gateway_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "gateway_data" + ":" + gateway_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
-}
-
-void MainWindow::on_subnet_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "subnet_data" + ":" + subnet_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
-}
-
-void MainWindow::on_port_pushButton_released()
-{
-    QString final_string_to_be_sent = QString("{") + "port_data" + ":" + port_data + "}";
-    QTextStream data_stream(&serial_port);
-    data_stream << final_string_to_be_sent;
+    ui->COM_status_label->setText("Disconnected");
 }

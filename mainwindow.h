@@ -53,18 +53,6 @@ private slots:
 
     void on_COM_close_pushButton_released();
 
-    void on_SSID_pushButton_released();
-
-    void on_password_pushButton_released();
-
-    void on_static_IP_pushButton_released();
-
-    void on_gateway_pushButton_released();
-
-    void on_subnet_pushButton_released();
-
-    void on_port_pushButton_released();
-
 private:
     Ui::MainWindow *ui;
 
