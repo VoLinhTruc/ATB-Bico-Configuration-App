@@ -1,0 +1,24 @@
+find "Qt x.x.x for Desktop (MinGW x.x.x xxbit)" in Windowns Start
+
+open base on adminitrator role
+
+E:
+
+cd E:\HOC\Qt\Qt project\ATB-Bico-Configuration-App\ATB-Bico-Configuration-App
+
+qmake ATB-Bico-Configuration-App.pro
+
+mingw32-make
+
+mingw32-make install
+
+cd release
+
+del *.o
+
+del *.cpp
+
+del *.h
+
+windeployqt ATB-Bico-Configuration-App.exe
+
