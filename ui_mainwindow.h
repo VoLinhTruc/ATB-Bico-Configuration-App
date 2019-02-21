@@ -13,11 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
@@ -30,6 +32,9 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionExit;
+    QAction *actionHow_To_Use;
+    QAction *actionAbout;
     QWidget *centralWidget;
     QGroupBox *groupBox;
     QLineEdit *SSID_lineEdit;
@@ -44,6 +49,21 @@ public:
     QLabel *gateway_label;
     QLabel *subnet_label;
     QLabel *port_label;
+    QLabel *baurate_label;
+    QLabel *time_life_label;
+    QLineEdit *baudrate_lineEdit;
+    QLineEdit *time_life_lineEdit;
+    QPushButton *SSID_send_pushButton;
+    QPushButton *password_send_pushButton;
+    QPushButton *static_IP_send_pushButton;
+    QPushButton *gateway_send_pushButton;
+    QPushButton *subnet_send_pushButton;
+    QPushButton *port_send_pushButton;
+    QPushButton *baudrate_send_pushButton;
+    QPushButton *time_life_send_pushButton;
+    QLineEdit *serial_mode_lineEdit;
+    QLabel *serial_mode_label;
+    QPushButton *serial_mode_send_pushButton;
     QGroupBox *groupBox_2;
     QLineEdit *file_path_lineEdit;
     QPushButton *load_file_content_pushButton;
@@ -53,15 +73,23 @@ public:
     QLabel *file_path_label;
     QLabel *file_content_label;
     QLabel *serial_content_label;
+    QPushButton *file_content_clear_all_pushButton;
+    QPushButton *serial_content_clear_all_pushButton;
     QGroupBox *groupBox_3;
-    QLineEdit *COM_selecte_lineEdit;
     QPushButton *COM_open_pushButton;
     QPushButton *COM_close_pushButton;
     QPushButton *submit_pushButton;
-    QLineEdit *COM_baudrate_lineEdit;
     QLabel *COM_status_label;
+    QComboBox *serial_available_port_comboBox;
+    QComboBox *serial_baudrate_comboBox;
+    QComboBox *serial_mode_comboBox;
     QLabel *label;
+    QPushButton *input_field_to_file_content_pushButton;
+    QPushButton *file_content_to_input_field_pushButton;
+    QLabel *label_2;
     QMenuBar *menuBar;
+    QMenu *menuFile;
+    QMenu *menuHelp;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -69,7 +97,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(713, 539);
+        MainWindow->resize(915, 583);
         MainWindow->setStyleSheet(QLatin1String("/* QDarkStyleSheet --------------------------------------------------------\n"
 "\n"
 "This is the main style sheet, the palette has nine main colors.\n"
@@ -1536,53 +1564,108 @@ public:
 "\n"
 "QTabBar::tab:right:!selecte"));
         MainWindow->setAnimated(true);
+        actionExit = new QAction(MainWindow);
+        actionExit->setObjectName(QStringLiteral("actionExit"));
+        actionHow_To_Use = new QAction(MainWindow);
+        actionHow_To_Use->setObjectName(QStringLiteral("actionHow_To_Use"));
+        actionAbout = new QAction(MainWindow);
+        actionAbout->setObjectName(QStringLiteral("actionAbout"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(10, 120, 351, 261));
+        groupBox->setEnabled(true);
+        groupBox->setGeometry(QRect(10, 90, 511, 261));
         SSID_lineEdit = new QLineEdit(groupBox);
         SSID_lineEdit->setObjectName(QStringLiteral("SSID_lineEdit"));
-        SSID_lineEdit->setGeometry(QRect(10, 30, 181, 20));
+        SSID_lineEdit->setGeometry(QRect(80, 30, 111, 20));
         SSID_lineEdit->setStyleSheet(QStringLiteral(""));
         password_lineEdit = new QLineEdit(groupBox);
         password_lineEdit->setObjectName(QStringLiteral("password_lineEdit"));
-        password_lineEdit->setGeometry(QRect(10, 70, 181, 20));
+        password_lineEdit->setGeometry(QRect(80, 70, 111, 20));
         password_lineEdit->setEchoMode(QLineEdit::Normal);
         static_IP_lineEdit = new QLineEdit(groupBox);
         static_IP_lineEdit->setObjectName(QStringLiteral("static_IP_lineEdit"));
-        static_IP_lineEdit->setGeometry(QRect(10, 110, 181, 20));
+        static_IP_lineEdit->setGeometry(QRect(80, 110, 111, 20));
         gateway_lineEdit = new QLineEdit(groupBox);
         gateway_lineEdit->setObjectName(QStringLiteral("gateway_lineEdit"));
-        gateway_lineEdit->setGeometry(QRect(10, 150, 181, 20));
+        gateway_lineEdit->setGeometry(QRect(80, 150, 111, 20));
         gateway_lineEdit->setStyleSheet(QStringLiteral(""));
         subnet_lineEdit = new QLineEdit(groupBox);
         subnet_lineEdit->setObjectName(QStringLiteral("subnet_lineEdit"));
-        subnet_lineEdit->setGeometry(QRect(10, 190, 181, 20));
+        subnet_lineEdit->setGeometry(QRect(80, 190, 111, 20));
         port_lineEdit = new QLineEdit(groupBox);
         port_lineEdit->setObjectName(QStringLiteral("port_lineEdit"));
-        port_lineEdit->setGeometry(QRect(10, 230, 181, 20));
+        port_lineEdit->setGeometry(QRect(80, 230, 111, 20));
         SSID_label = new QLabel(groupBox);
         SSID_label->setObjectName(QStringLiteral("SSID_label"));
-        SSID_label->setGeometry(QRect(230, 30, 101, 21));
+        SSID_label->setGeometry(QRect(10, 30, 61, 20));
         password_label = new QLabel(groupBox);
         password_label->setObjectName(QStringLiteral("password_label"));
-        password_label->setGeometry(QRect(230, 70, 101, 21));
+        password_label->setGeometry(QRect(10, 70, 61, 21));
         static_IP_label = new QLabel(groupBox);
         static_IP_label->setObjectName(QStringLiteral("static_IP_label"));
-        static_IP_label->setGeometry(QRect(230, 110, 101, 21));
+        static_IP_label->setGeometry(QRect(10, 110, 61, 21));
         gateway_label = new QLabel(groupBox);
         gateway_label->setObjectName(QStringLiteral("gateway_label"));
-        gateway_label->setGeometry(QRect(230, 150, 101, 21));
+        gateway_label->setGeometry(QRect(10, 150, 61, 21));
         subnet_label = new QLabel(groupBox);
         subnet_label->setObjectName(QStringLiteral("subnet_label"));
-        subnet_label->setGeometry(QRect(230, 190, 101, 21));
+        subnet_label->setGeometry(QRect(10, 190, 61, 21));
         port_label = new QLabel(groupBox);
         port_label->setObjectName(QStringLiteral("port_label"));
-        port_label->setGeometry(QRect(230, 230, 101, 21));
+        port_label->setGeometry(QRect(10, 230, 61, 21));
+        baurate_label = new QLabel(groupBox);
+        baurate_label->setObjectName(QStringLiteral("baurate_label"));
+        baurate_label->setGeometry(QRect(270, 30, 61, 20));
+        time_life_label = new QLabel(groupBox);
+        time_life_label->setObjectName(QStringLiteral("time_life_label"));
+        time_life_label->setGeometry(QRect(270, 150, 61, 20));
+        baudrate_lineEdit = new QLineEdit(groupBox);
+        baudrate_lineEdit->setObjectName(QStringLiteral("baudrate_lineEdit"));
+        baudrate_lineEdit->setGeometry(QRect(340, 30, 111, 20));
+        baudrate_lineEdit->setStyleSheet(QStringLiteral(""));
+        time_life_lineEdit = new QLineEdit(groupBox);
+        time_life_lineEdit->setObjectName(QStringLiteral("time_life_lineEdit"));
+        time_life_lineEdit->setGeometry(QRect(340, 150, 111, 20));
+        time_life_lineEdit->setStyleSheet(QStringLiteral(""));
+        SSID_send_pushButton = new QPushButton(groupBox);
+        SSID_send_pushButton->setObjectName(QStringLiteral("SSID_send_pushButton"));
+        SSID_send_pushButton->setGeometry(QRect(200, 30, 41, 23));
+        password_send_pushButton = new QPushButton(groupBox);
+        password_send_pushButton->setObjectName(QStringLiteral("password_send_pushButton"));
+        password_send_pushButton->setGeometry(QRect(200, 70, 41, 23));
+        static_IP_send_pushButton = new QPushButton(groupBox);
+        static_IP_send_pushButton->setObjectName(QStringLiteral("static_IP_send_pushButton"));
+        static_IP_send_pushButton->setGeometry(QRect(200, 110, 41, 23));
+        gateway_send_pushButton = new QPushButton(groupBox);
+        gateway_send_pushButton->setObjectName(QStringLiteral("gateway_send_pushButton"));
+        gateway_send_pushButton->setGeometry(QRect(200, 150, 41, 23));
+        subnet_send_pushButton = new QPushButton(groupBox);
+        subnet_send_pushButton->setObjectName(QStringLiteral("subnet_send_pushButton"));
+        subnet_send_pushButton->setGeometry(QRect(200, 190, 41, 23));
+        port_send_pushButton = new QPushButton(groupBox);
+        port_send_pushButton->setObjectName(QStringLiteral("port_send_pushButton"));
+        port_send_pushButton->setGeometry(QRect(200, 230, 41, 23));
+        baudrate_send_pushButton = new QPushButton(groupBox);
+        baudrate_send_pushButton->setObjectName(QStringLiteral("baudrate_send_pushButton"));
+        baudrate_send_pushButton->setGeometry(QRect(460, 30, 41, 23));
+        time_life_send_pushButton = new QPushButton(groupBox);
+        time_life_send_pushButton->setObjectName(QStringLiteral("time_life_send_pushButton"));
+        time_life_send_pushButton->setGeometry(QRect(460, 150, 41, 23));
+        serial_mode_lineEdit = new QLineEdit(groupBox);
+        serial_mode_lineEdit->setObjectName(QStringLiteral("serial_mode_lineEdit"));
+        serial_mode_lineEdit->setGeometry(QRect(340, 70, 111, 20));
+        serial_mode_lineEdit->setStyleSheet(QStringLiteral(""));
+        serial_mode_label = new QLabel(groupBox);
+        serial_mode_label->setObjectName(QStringLiteral("serial_mode_label"));
+        serial_mode_label->setGeometry(QRect(270, 70, 61, 20));
+        serial_mode_send_pushButton = new QPushButton(groupBox);
+        serial_mode_send_pushButton->setObjectName(QStringLiteral("serial_mode_send_pushButton"));
+        serial_mode_send_pushButton->setGeometry(QRect(460, 70, 41, 23));
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(390, 120, 311, 351));
+        groupBox_2->setGeometry(QRect(590, 90, 311, 421));
         file_path_lineEdit = new QLineEdit(groupBox_2);
         file_path_lineEdit->setObjectName(QStringLiteral("file_path_lineEdit"));
         file_path_lineEdit->setGeometry(QRect(70, 30, 231, 20));
@@ -1597,7 +1680,7 @@ public:
         file_content_plainTextEdit->setGeometry(QRect(10, 120, 291, 101));
         serial_content_plainTextEdit = new QPlainTextEdit(groupBox_2);
         serial_content_plainTextEdit->setObjectName(QStringLiteral("serial_content_plainTextEdit"));
-        serial_content_plainTextEdit->setGeometry(QRect(10, 260, 291, 81));
+        serial_content_plainTextEdit->setGeometry(QRect(10, 260, 291, 151));
         file_path_label = new QLabel(groupBox_2);
         file_path_label->setObjectName(QStringLiteral("file_path_label"));
         file_path_label->setGeometry(QRect(10, 30, 51, 21));
@@ -1607,40 +1690,64 @@ public:
         serial_content_label = new QLabel(groupBox_2);
         serial_content_label->setObjectName(QStringLiteral("serial_content_label"));
         serial_content_label->setGeometry(QRect(10, 230, 81, 21));
+        file_content_clear_all_pushButton = new QPushButton(groupBox_2);
+        file_content_clear_all_pushButton->setObjectName(QStringLiteral("file_content_clear_all_pushButton"));
+        file_content_clear_all_pushButton->setGeometry(QRect(80, 90, 51, 23));
+        serial_content_clear_all_pushButton = new QPushButton(groupBox_2);
+        serial_content_clear_all_pushButton->setObjectName(QStringLiteral("serial_content_clear_all_pushButton"));
+        serial_content_clear_all_pushButton->setGeometry(QRect(90, 230, 51, 23));
         groupBox_3 = new QGroupBox(centralWidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 380, 351, 91));
-        COM_selecte_lineEdit = new QLineEdit(groupBox_3);
-        COM_selecte_lineEdit->setObjectName(QStringLiteral("COM_selecte_lineEdit"));
-        COM_selecte_lineEdit->setGeometry(QRect(10, 30, 81, 20));
+        groupBox_3->setGeometry(QRect(10, 410, 511, 101));
         COM_open_pushButton = new QPushButton(groupBox_3);
         COM_open_pushButton->setObjectName(QStringLiteral("COM_open_pushButton"));
-        COM_open_pushButton->setGeometry(QRect(210, 30, 51, 23));
+        COM_open_pushButton->setGeometry(QRect(270, 30, 91, 23));
         COM_close_pushButton = new QPushButton(groupBox_3);
         COM_close_pushButton->setObjectName(QStringLiteral("COM_close_pushButton"));
-        COM_close_pushButton->setGeometry(QRect(290, 30, 51, 23));
+        COM_close_pushButton->setGeometry(QRect(400, 30, 101, 23));
         submit_pushButton = new QPushButton(groupBox_3);
         submit_pushButton->setObjectName(QStringLiteral("submit_pushButton"));
-        submit_pushButton->setGeometry(QRect(210, 60, 131, 23));
-        COM_baudrate_lineEdit = new QLineEdit(groupBox_3);
-        COM_baudrate_lineEdit->setObjectName(QStringLiteral("COM_baudrate_lineEdit"));
-        COM_baudrate_lineEdit->setEnabled(false);
-        COM_baudrate_lineEdit->setGeometry(QRect(100, 30, 81, 21));
+        submit_pushButton->setGeometry(QRect(270, 60, 231, 23));
         COM_status_label = new QLabel(groupBox_3);
         COM_status_label->setObjectName(QStringLiteral("COM_status_label"));
-        COM_status_label->setGeometry(QRect(10, 55, 81, 21));
+        COM_status_label->setGeometry(QRect(10, 60, 81, 21));
+        serial_available_port_comboBox = new QComboBox(groupBox_3);
+        serial_available_port_comboBox->setObjectName(QStringLiteral("serial_available_port_comboBox"));
+        serial_available_port_comboBox->setGeometry(QRect(10, 30, 121, 22));
+        serial_baudrate_comboBox = new QComboBox(groupBox_3);
+        serial_baudrate_comboBox->setObjectName(QStringLiteral("serial_baudrate_comboBox"));
+        serial_baudrate_comboBox->setGeometry(QRect(140, 30, 101, 22));
+        serial_mode_comboBox = new QComboBox(groupBox_3);
+        serial_mode_comboBox->setObjectName(QStringLiteral("serial_mode_comboBox"));
+        serial_mode_comboBox->setGeometry(QRect(140, 60, 101, 22));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(110, 50, 531, 41));
+        label->setGeometry(QRect(0, 30, 531, 41));
         label->setPixmap(QPixmap(QString::fromUtf8("title.png")));
+        input_field_to_file_content_pushButton = new QPushButton(centralWidget);
+        input_field_to_file_content_pushButton->setObjectName(QStringLiteral("input_field_to_file_content_pushButton"));
+        input_field_to_file_content_pushButton->setGeometry(QRect(540, 230, 31, 23));
+        file_content_to_input_field_pushButton = new QPushButton(centralWidget);
+        file_content_to_input_field_pushButton->setObjectName(QStringLiteral("file_content_to_input_field_pushButton"));
+        file_content_to_input_field_pushButton->setGeometry(QRect(540, 260, 31, 23));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(200, 70, 151, 20));
         MainWindow->setCentralWidget(centralWidget);
         groupBox_3->raise();
         groupBox_2->raise();
         groupBox->raise();
         label->raise();
+        input_field_to_file_content_pushButton->raise();
+        file_content_to_input_field_pushButton->raise();
+        label_2->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 713, 30));
+        menuBar->setGeometry(QRect(0, 0, 915, 30));
+        menuFile = new QMenu(menuBar);
+        menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuHelp = new QMenu(menuBar);
+        menuHelp->setObjectName(QStringLiteral("menuHelp"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -1657,10 +1764,15 @@ public:
         QWidget::setTabOrder(file_path_lineEdit, load_file_content_pushButton);
         QWidget::setTabOrder(load_file_content_pushButton, save_file_content_pushButton);
         QWidget::setTabOrder(save_file_content_pushButton, file_content_plainTextEdit);
-        QWidget::setTabOrder(file_content_plainTextEdit, COM_selecte_lineEdit);
-        QWidget::setTabOrder(COM_selecte_lineEdit, COM_open_pushButton);
+        QWidget::setTabOrder(file_content_plainTextEdit, COM_open_pushButton);
         QWidget::setTabOrder(COM_open_pushButton, COM_close_pushButton);
         QWidget::setTabOrder(COM_close_pushButton, submit_pushButton);
+
+        menuBar->addAction(menuFile->menuAction());
+        menuBar->addAction(menuHelp->menuAction());
+        menuFile->addAction(actionExit);
+        menuHelp->addAction(actionHow_To_Use);
+        menuHelp->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
@@ -1670,6 +1782,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ATB-Bico-Configuration-App", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainWindow", "Exit", Q_NULLPTR));
+        actionHow_To_Use->setText(QApplication::translate("MainWindow", "How To Use", Q_NULLPTR));
+        actionAbout->setText(QApplication::translate("MainWindow", "About", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("MainWindow", "Input Field", Q_NULLPTR));
         SSID_label->setText(QApplication::translate("MainWindow", "SSID", Q_NULLPTR));
         password_label->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
@@ -1677,20 +1792,80 @@ public:
         gateway_label->setText(QApplication::translate("MainWindow", "Gateway", Q_NULLPTR));
         subnet_label->setText(QApplication::translate("MainWindow", "Subnet", Q_NULLPTR));
         port_label->setText(QApplication::translate("MainWindow", "Port", Q_NULLPTR));
+        baurate_label->setText(QApplication::translate("MainWindow", "Baudrate", Q_NULLPTR));
+        time_life_label->setText(QApplication::translate("MainWindow", "Time Life", Q_NULLPTR));
+        SSID_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        password_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        static_IP_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        gateway_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        subnet_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        port_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        baudrate_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        time_life_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
+        serial_mode_label->setText(QApplication::translate("MainWindow", "Serial Mode", Q_NULLPTR));
+        serial_mode_send_pushButton->setText(QApplication::translate("MainWindow", "Send", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "File and Display Field", Q_NULLPTR));
         load_file_content_pushButton->setText(QApplication::translate("MainWindow", "Load File", Q_NULLPTR));
         save_file_content_pushButton->setText(QApplication::translate("MainWindow", "Save File", Q_NULLPTR));
         file_path_label->setText(QApplication::translate("MainWindow", "File Path", Q_NULLPTR));
         file_content_label->setText(QApplication::translate("MainWindow", "File Content", Q_NULLPTR));
         serial_content_label->setText(QApplication::translate("MainWindow", "Serial Content", Q_NULLPTR));
+        file_content_clear_all_pushButton->setText(QApplication::translate("MainWindow", "Clear All", Q_NULLPTR));
+        serial_content_clear_all_pushButton->setText(QApplication::translate("MainWindow", "Clear All", Q_NULLPTR));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "COM Port Field", Q_NULLPTR));
-        COM_selecte_lineEdit->setText(QApplication::translate("MainWindow", "COM", Q_NULLPTR));
         COM_open_pushButton->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
         COM_close_pushButton->setText(QApplication::translate("MainWindow", "Close", Q_NULLPTR));
         submit_pushButton->setText(QApplication::translate("MainWindow", "Send File Content", Q_NULLPTR));
-        COM_baudrate_lineEdit->setText(QApplication::translate("MainWindow", "9600", Q_NULLPTR));
         COM_status_label->setText(QApplication::translate("MainWindow", "Disconnected", Q_NULLPTR));
+        serial_available_port_comboBox->clear();
+        serial_available_port_comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Refresh", Q_NULLPTR)
+        );
+        serial_baudrate_comboBox->clear();
+        serial_baudrate_comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "9600", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "38400", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "57600", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "115200", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "1200", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "2400", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "4800", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "19200", Q_NULLPTR)
+        );
+        serial_mode_comboBox->clear();
+        serial_mode_comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Empty", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8N1 ", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5N1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6N1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7N1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5N2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6N2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7N2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8N2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5E1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6E1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7E1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8E1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5E2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6E2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7E2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8E2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5O1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6O1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7O1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8O1", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_5O2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_6O2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_7O2", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "SERIAL_8O2", Q_NULLPTR)
+        );
         label->setText(QString());
+        input_field_to_file_content_pushButton->setText(QApplication::translate("MainWindow", "->", Q_NULLPTR));
+        file_content_to_input_field_pushButton->setText(QApplication::translate("MainWindow", "<-", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-style:italic;\">Power by Autobase Vietnam</span></p></body></html>", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("MainWindow", "File", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", Q_NULLPTR));
     } // retranslateUi
 
 };

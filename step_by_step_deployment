@@ -14,11 +14,7 @@ mingw32-make install
 
 cd release
 
-del *.o
-
-del *.cpp
-
-del *.h
+del *.o *.cpp *.h
 
 windeployqt ATB-Bico-Configuration-App.exe
 

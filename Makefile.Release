@@ -226,6 +226,17 @@ release/moc_mainwindow.cpp: C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QMa
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QScrollBar \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qscrollbar.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QList \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonDocument \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonObject \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QDesktopServices \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qdesktopservices.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qstandardpaths.h \
 		mainwindow.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/bin/moc.exe
@@ -376,6 +387,17 @@ release/main.o: main.cpp mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QScrollBar \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qscrollbar.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QList \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonDocument \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonObject \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QDesktopServices \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qdesktopservices.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qstandardpaths.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -509,6 +531,17 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QScrollBar \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qscrollbar.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QList \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonDocument \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QJsonObject \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/QDesktopServices \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qdesktopservices.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qstandardpaths.h \
 		ui_mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QAction \
@@ -523,15 +556,8 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qinputmethod.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QButtonGroup \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QGroupBox \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qgroupbox.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QComboBox \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qstyleoption.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -541,6 +567,15 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qstyle.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QGroupBox \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qgroupbox.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QHeaderView \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qlabel.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QLineEdit \
@@ -549,9 +584,10 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QMenu \
+		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QMenuBar \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/QPlainTextEdit \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qplaintextedit.h \
 		C:/Qt/Qt5.9.7/5.9.7/mingw53_32/include/QtWidgets/qtextedit.h \
